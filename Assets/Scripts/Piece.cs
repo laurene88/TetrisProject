@@ -30,4 +30,51 @@ public class Piece : MonoBehaviour
     }
 
 
+    //wasd here, maybe change to include arrows
+    //TODO
+
+
+    public void Update()
+    {
+        this.board.Clear(this);
+       
+        if (Input.GetKeyDown(KeyCode.A)){
+            Move(Vector2Int.left);
+        } else if (Input.GetKeyDown(KeyCode.D)){
+            Move(Vector2Int.right);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S)){ //soft drop
+            Move(Vector2Int.down);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)){
+            HardDrop();
+        }
+
+        this.board.Set(this);
+    }
+
+    private void HardDrop(){
+        while (Move(Vector2Int.down)){ //returns bool, so while can successfully move down.
+            continue;
+        } //will stop when it cant go further.
+    }
+
+    public bool Move(Vector2Int translation){
+        //update position, but need to check it is valid first.
+        // in bounds? already a piece there?
+        Vector3Int newPosition = this.position;
+        newPosition.x += translation.x;
+        newPosition.y += translation.y;
+        //give this to game board to then check if valid.
+        bool valid = this.board.IsValidPosition(this, newPosition); 
+
+        if (valid) {
+            this.position = newPosition;
+        }
+
+        //return bool if move succeeded
+        return valid;
+    }
 }
