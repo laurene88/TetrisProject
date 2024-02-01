@@ -17,12 +17,20 @@ public class Piece : MonoBehaviour
     public int rotationIndex {get; private set;}
 
 
+    public float stepDelay = 1f; //slow default for level 1.
+    public float lockDelay = 0.5f; //this allows a bit of sliding possible
+
+    private float stepTime;
+    private float lockTime;
+
     //tile maps use Vector3Ints (not 2)        
     public void Initialise(Board board, Vector3Int position, TetrominoData data)
     {
         this.board = board;
         this.position = position;
         this.data = data;
+        this.stepTime = Time.time + this.stepDelay; //1sec later than current
+        this.lockTime = 0f; //will increase, after reaches lock delay itll lock. 
         this.rotationIndex = 0; //make sure to set this eachtime so spawns as default.
         if (this.cells == null){
             this.cells = new Vector3Int[data.cells.Length];
@@ -40,6 +48,9 @@ public class Piece : MonoBehaviour
     public void Update()
     {
         this.board.Clear(this);
+
+        //before other stuff, resets if moves/rotates.
+        this.lockTime += Time.deltaTime;
 
         //rotations
         //think of each rotation as an index (4 options)
@@ -62,13 +73,34 @@ public class Piece : MonoBehaviour
             HardDrop();
         }
 
+        if (Time.time >= this.stepTime){
+            Step();
+        }
+
         this.board.Set(this);
+    }
+
+
+    private void Step(){
+        this.stepTime = Time.time + this.stepDelay;
+        //pushes out the step time further.
+        Move(Vector2Int.down);
+        if (this.lockTime >= this.lockDelay){
+            Lock();
+        }
+    }
+
+
+    private void Lock(){
+        this.board.Set(this);
+        this.board.SpawnPiece();
     }
 
     private void HardDrop(){
         while (Move(Vector2Int.down)){ //returns bool, so while can successfully move down.
             continue;
         } //will stop when it cant go further.
+        Lock();
     }
 
     public bool Move(Vector2Int translation){
@@ -82,6 +114,7 @@ public class Piece : MonoBehaviour
 
         if (valid) {
             this.position = newPosition;
+            this.lockTime = 0f; //reset if valid.
         }
 
         //return bool if move succeeded
