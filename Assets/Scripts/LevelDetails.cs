@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class LevelDetails : ScriptableObject
 {
     public int levelNumber;
-
+    public int goalLines;
     //Sets Piece - stepDelay
     // the smaller this number the faster they fall.
     public float levelStepDelay = 1f;

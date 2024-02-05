@@ -149,7 +149,10 @@ public class Board : MonoBehaviour
         {
             Vector3Int position = new Vector3Int(col, row, 0);
             this.tilemap.SetTile(position, null); //delete tile.
-        }   
+        }
+
+        gmScript.lineCounter++;
+        Debug.Log("completed line counter:" + gmScript.lineCounter);
 
         while (row < bounds.yMax)
         {

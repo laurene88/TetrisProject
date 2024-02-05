@@ -363,17 +363,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevel: 0
   currentlevelData: {fileID: 11400000, guid: 226426452f98aad4d830f58611b57e55, type: 2}
+  score: 0
+  lineCounter: 0
   allLevelData:
   - {fileID: 11400000, guid: 226426452f98aad4d830f58611b57e55, type: 2}
   - {fileID: 11400000, guid: 84e22b4b467da97489f334a93d2f23c8, type: 2}
+  - {fileID: 11400000, guid: 0ba5eaf600112e649abc42960343997a, type: 2}
   - {fileID: 11400000, guid: a00d85091f4cf6d488ea38b43ec3bc12, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3e2843d37f91b0948bb7f44fbd4d0bec, type: 2}
+  - {fileID: 11400000, guid: 3c971cda1f2b0cb4395f559cb08f336d, type: 2}
+  - {fileID: 11400000, guid: 0995a1c58b547c1479ce771faf3af74c, type: 2}
+  - {fileID: 11400000, guid: 31ec33f0df656564d8532aee55b8d34c, type: 2}
+  - {fileID: 11400000, guid: 585ea90503d994c41a3256581e412624, type: 2}
+  - {fileID: 11400000, guid: 8cc058e3744f1054081076635782cea9, type: 2}
 --- !u!4 &255891089
 Transform:
   m_ObjectHideFlags: 0
