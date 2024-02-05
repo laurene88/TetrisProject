@@ -52,7 +52,6 @@ public class Board : MonoBehaviour
         // set tile in this dataset, from the level tile set the GM is holding.
         int random2 = Random.Range(0,3);
         data.tile = gmScript.currentlevelData.levelTiles[random2];
-        ///TODO NEED LINK TO GM & level data*** 
         // THIS IS WHERE SET TILE.
 
         this.activePiece.Initialise(this,this.spawnPosition, data);

@@ -13,11 +13,17 @@ public class GMScript : MonoBehaviour
     [SerializeField]
     public LevelDetails[] allLevelData = new LevelDetails[10];
 
+
+    public void Start(){
+        currentLevel = 0;
+        currentlevelData = allLevelData[currentLevel];
+    }
+
     //ideally move this out and check in board? so its not an update only runs when needed.
     public void Update(){
         if (lineCounter >= currentlevelData.goalLines){
+            lineCounter = 0;
             ChangeLevel();
-        lineCounter = 0;
         }
     }
     
