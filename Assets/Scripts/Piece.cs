@@ -54,18 +54,18 @@ public class Piece : MonoBehaviour
 
         //rotations
         //think of each rotation as an index (4 options)
-        if (Input.GetKeyDown(KeyCode.Q)){
+        if (Input.GetKeyDown(KeyCode.A)){
             Rotate(-1);
-        } else if (Input.GetKeyDown(KeyCode.E)){
+        } else if (Input.GetKeyDown(KeyCode.D)){
             Rotate(1);
         }
-        if (Input.GetKeyDown(KeyCode.A)){
+        if (Input.GetKeyDown(KeyCode.LeftArrow)){
             Move(Vector2Int.left);
-        } else if (Input.GetKeyDown(KeyCode.D)){
+        } else if (Input.GetKeyDown(KeyCode.RightArrow)){
             Move(Vector2Int.right);
         }
 
-        if (Input.GetKeyDown(KeyCode.S)){ //soft drop
+        if (Input.GetKeyDown(KeyCode.DownArrow)){ //soft drop
             Move(Vector2Int.down);
         }
 
