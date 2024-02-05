@@ -16,7 +16,9 @@ public enum Tetromino
 public struct TetrominoData
 {
     public Tetromino tetromino; //type to associate data for (our enum)
-    public Tile tile; //select which tile we want to draw
+
+    //TODO * 
+    public Tile tile; //select which tile we want to draw - NEW not associated with tetromino but LEVEL.
     public Vector2Int[] cells {get; private set;} //to set tetromino shape
     // changed from a field to a property by defining get/set so wont show up in editor.
     public Vector2Int[,] wallKicks {get; private set;}

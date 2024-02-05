@@ -41,10 +41,6 @@ public class Piece : MonoBehaviour
     }
 
 
-    //wasd here, maybe change to include arrows
-    //TODO
-
-
     public void Update()
     {
         this.board.Clear(this);

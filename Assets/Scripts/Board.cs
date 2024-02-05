@@ -5,6 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class Board : MonoBehaviour
 {
+
+    public GameObject GM;
+    public GMScript gmScript;
     //define array of tetromino data to customise in editor
     public TetrominoData[] tetrominoes;
     //need to refrence our tile map
@@ -23,6 +26,7 @@ public class Board : MonoBehaviour
         }
 
     private void Awake(){
+        gmScript = GM.GetComponent<GMScript>();
         //get tilemap which is on child of this 'board'
         this.tilemap = GetComponentInChildren<Tilemap>();
         this.activePiece = GetComponentInChildren<Piece>();
@@ -41,9 +45,15 @@ public class Board : MonoBehaviour
 
     public void SpawnPiece()
     {
-        //need random tetromino
+        //need random tetromino, get one of our structs & assoc data.
+        // tile is not set, this is set after.
         int random = Random.Range(0,tetrominoes.Length);
         TetrominoData data = tetrominoes[random];
+        // set tile in this dataset, from the level tile set the GM is holding.
+        int random2 = Random.Range(0,3);
+        data.tile = gmScript.currentlevelData.levelTiles[random2];
+        ///TODO NEED LINK TO GM & level data*** 
+        // THIS IS WHERE SET TILE.
 
         this.activePiece.Initialise(this,this.spawnPosition, data);
         

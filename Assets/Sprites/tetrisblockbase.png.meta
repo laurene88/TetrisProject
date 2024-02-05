@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: f36b2728c6611864aa73b0ddab4e0c10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8312941180209758649
+    second: tetrisblockbase_0
+  - first:
+      213: 6820292445483293098
+    second: tetrisblockbase_1
+  - first:
+      213: -8719520278832259938
+    second: tetrisblockbase_2
+  - first:
+      213: -2354966898274155395
+    second: tetrisblockbase_3
+  - first:
+      213: 491269897053929840
+    second: tetrisblockbase_4
+  - first:
+      213: 7733766139819604707
+    second: tetrisblockbase_5
+  - first:
+      213: -5509526162929296289
+    second: tetrisblockbase_6
+  - first:
+      213: -3441298037924321491
+    second: tetrisblockbase_7
+  - first:
+      213: -946880166051828844
+    second: tetrisblockbase_8
+  - first:
+      213: -9059813888042823427
+    second: tetrisblockbase_9
+  - first:
+      213: -6446083880963190963
+    second: tetrisblockbase_10
+  - first:
+      213: 8374994584086502091
+    second: tetrisblockbase_11
+  - first:
+      213: -6888845422887410834
+    second: tetrisblockbase_12
+  - first:
+      213: 9066706751340182627
+    second: tetrisblockbase_13
+  - first:
+      213: -6739205051816733832
+    second: tetrisblockbase_14
+  - first:
+      213: 6716988487992686693
+    second: tetrisblockbase_15
+  - first:
+      213: 9172233605451315772
+    second: tetrisblockbase_16
+  - first:
+      213: 7832228125785996714
+    second: tetrisblockbase_17
+  - first:
+      213: 2723658540148231222
+    second: tetrisblockbase_18
+  - first:
+      213: 6748075584588310605
+    second: tetrisblockbase_19
+  - first:
+      213: 7703869409637239795
+    second: tetrisblockbase_20
+  - first:
+      213: -3328707177408065812
+    second: tetrisblockbase_21
+  - first:
+      213: 3241046706444224324
+    second: tetrisblockbase_22
+  - first:
+      213: 5348876161631034022
+    second: tetrisblockbase_23
+  - first:
+      213: -2460782867907431729
+    second: tetrisblockbase_24
+  - first:
+      213: 2750555977637580523
+    second: tetrisblockbase_25
+  - first:
+      213: -1241445901046878476
+    second: tetrisblockbase_26
+  - first:
+      213: -6454661111791770838
+    second: tetrisblockbase_27
+  - first:
+      213: 8059040475127872535
+    second: tetrisblockbase_28
+  - first:
+      213: 5087438582111362649
+    second: tetrisblockbase_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tetrisblockbase_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4518
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e71ea5a0082ac80800000000000000
+      internalID: -8312941180209758649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_1
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 4518
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9df4df7db86ae50800000000000000
+      internalID: 6820292445483293098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_2
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 4518
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c5360218a0ef680800000000000000
+      internalID: -8719520278832259938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4016
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74c09a451a715fd0800000000000000
+      internalID: -2354966898274155395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_4
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 4016
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0710eb65e5751d600800000000000000
+      internalID: 491269897053929840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_5
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 4016
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea34e3345bd35b60800000000000000
+      internalID: 7733766139819604707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3514
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cd0e1452b3a83b0800000000000000
+      internalID: -5509526162929296289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_7
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 3514
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27a543daad0e30d0800000000000000
+      internalID: -3441298037924321491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_8
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 3514
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b2e9971810cd2f0800000000000000
+      internalID: -946880166051828844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3012
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df09e001543154280800000000000000
+      internalID: -9059813888042823427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_10
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 3012
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f41d2fcd8ea86a0800000000000000
+      internalID: -6446083880963190963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_11
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 3012
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcadb4c9335f93470800000000000000
+      internalID: 8374994584086502091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2510
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6368382697e560a0800000000000000
+      internalID: -6888845422887410834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_13
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 2510
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c744cb0c963dd70800000000000000
+      internalID: 9066706751340182627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_14
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2510
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87312f116b88972a0800000000000000
+      internalID: -6739205051816733832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2008
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56831331179873d50800000000000000
+      internalID: 6716988487992686693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_16
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 2008
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a73d91ed15a4f70800000000000000
+      internalID: 9172233605451315772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_17
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2008
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad3c45cbf9a1bc60800000000000000
+      internalID: 7832228125785996714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1506
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c8efef2016cc520800000000000000
+      internalID: 2723658540148231222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_19
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1506
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d486fd8cdfaf5ad50800000000000000
+      internalID: 6748075584588310605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_20
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1506
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb0d654964a9ea60800000000000000
+      internalID: 7703869409637239795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee8c49557e0ec1d0800000000000000
+      internalID: -3328707177408065812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_22
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1004
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447ce06cec28afc20800000000000000
+      internalID: 3241046706444224324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_23
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1004
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa929987860b3a40800000000000000
+      internalID: 5348876161631034022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2b209f40b89ddd0800000000000000
+      internalID: -2460782867907431729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_25
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 502
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee4aeda610fb2620800000000000000
+      internalID: 2750555977637580523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_26
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 502
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe6c3cc78f75cee0800000000000000
+      internalID: -1241445901046878476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23af16caef6c66a0800000000000000
+      internalID: -6454661111791770838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_28
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 0
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cfd7e0d9677df60800000000000000
+      internalID: 8059040475127872535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetrisblockbase_29
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 0
+        width: 503
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e5d5f9f663a9640800000000000000
+      internalID: 5087438582111362649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
