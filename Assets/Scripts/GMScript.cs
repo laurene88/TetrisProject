@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GMScript : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class GMScript : MonoBehaviour
     public Board board;
     public int currentLevel = 0;
     public LevelDetails currentlevelData;
-    public int score = 0;
     public int lineCounter = 0;
+    public int score = 0;
+    public TMP_Text scoreLabel;
+
 
 
 
@@ -47,6 +50,10 @@ public class GMScript : MonoBehaviour
         //}
     }
 
-    
+  public void updateScore(int i){
+    score = score + i;
+    scoreLabel.text = score.ToString();
+  }
+
 }
 

@@ -77,6 +77,7 @@ public class Board : MonoBehaviour
     public void GameOverLost(){
         tilemap.ClearAllTiles(); 
         //TODO IF LOSE: add an animation of rows of tiles of correct colours going up to the top of hte board
+        //?disable this script?
     }
    
 
@@ -164,6 +165,7 @@ public class Board : MonoBehaviour
         }
 
         gmScript.lineCounter++;
+        gmScript.updateScore(100);
         Debug.Log("completed line counter:" + gmScript.lineCounter);
                 
         if (gmScript.lineCounter >= gmScript.currentlevelData.goalLines){
