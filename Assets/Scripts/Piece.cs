@@ -53,10 +53,10 @@ public class Piece : MonoBehaviour
 
         //rotations
         //think of each rotation as an index (4 options)
-        if (Input.GetKeyDown(KeyCode.A)){
-            Rotate(-1);
-        } else if (Input.GetKeyDown(KeyCode.D)){
+        if (Input.GetKeyDown(KeyCode.Tab)){ //CHANGED to only rotate in 1 direction, using tab key.
             Rotate(1);
+        //} else if (Input.GetKeyDown(KeyCode.D)){
+          //  Rotate(1);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow)){
             Move(Vector2Int.left);
@@ -68,7 +68,7 @@ public class Piece : MonoBehaviour
             Move(Vector2Int.down);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Return)){
             HardDrop();
         }
 

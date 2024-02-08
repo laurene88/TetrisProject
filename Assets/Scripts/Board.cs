@@ -6,10 +6,11 @@ using UnityEngine.Tilemaps;
 public class Board : MonoBehaviour
 {
 
+    public bool midLevelChange;
     public GameObject GM;
     public GMScript gmScript;
     public GameObject MM;
-    
+
     //define array of tetromino data to customise in editor
     public TetrominoData[] tetrominoes;
     //need to refrence our tile map
@@ -48,21 +49,25 @@ public class Board : MonoBehaviour
 
     public void SpawnPiece()
     {
+        if (!midLevelChange){
         //need random tetromino, get one of our structs & assoc data.
         // tile is not set, this is set after.
         int random = Random.Range(0,tetrominoes.Length);
         TetrominoData data = tetrominoes[random];
         // set tile in this dataset, from the level tile set the GM is holding.
+        // HAPPENS TOO LATE WHEN CHANGING LEVELS.
         int blockColorInt = Random.Range(0,3);
         data.tile = gmScript.currentlevelData.levelTiles[blockColorInt];
-        // THIS IS WHERE SET TILE.
+        // THIS IS WHERE SET TILE TYPE/COLOR
 
+        //this instantiates new active piece.
         this.activePiece.Initialise(this,this.spawnPosition, data, blockColorInt);
         
         if (IsValidPosition(activePiece, spawnPosition)){
             Set(activePiece);
         } else{
             GameOver(); //this & methods copied from tutorial git
+        }
         }
     }
 
@@ -142,7 +147,6 @@ public class Board : MonoBehaviour
         return true;
     }
 
-    //TODO WTF IS TILEBASE
     public void LineClear(int row){
 
         RectInt bounds = this.Bounds;
@@ -155,6 +159,13 @@ public class Board : MonoBehaviour
 
         gmScript.lineCounter++;
         Debug.Log("completed line counter:" + gmScript.lineCounter);
+                
+        if (gmScript.lineCounter >= gmScript.currentlevelData.goalLines){
+            midLevelChange = true;
+            gmScript.ChangeLevel();
+            midLevelChange = false;
+        }
+
 
         while (row < bounds.yMax)
         {

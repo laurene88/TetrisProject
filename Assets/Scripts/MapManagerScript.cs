@@ -7,7 +7,6 @@ public class MapManagerScript : MonoBehaviour
 {
     [SerializeField]
     private Tilemap map;
-    private Grid grid;
     public GameObject gm;
     public GMScript gmScript;
     public Board board;
@@ -40,11 +39,13 @@ public class MapManagerScript : MonoBehaviour
         //{
           //  Debug.Log($"Key: {key}, Value: {dataFromTiles[key]}");
         //}
-      Debug.Log(dataFromTiles.Count);
+      
+      //Debug.Log(dataFromTiles.Count);
     }
 
     public void ResetTileColours(){
        // TileBase[] allTilesInPlay = FindObjectsOfType<TileBase>();
+           //     TileBase[] allTilesInPlay = map.GetTilesBlock(bounds);
         BoundsInt bounds = map.cellBounds;
         foreach (var position in map.cellBounds.allPositionsWithin) {
             if (map.HasTile(position)) {
@@ -54,31 +55,10 @@ public class MapManagerScript : MonoBehaviour
             }
         }
     }
-    // }
-    //     TileBase[] allTilesInPlay = map.GetTilesBlock(bounds);
-    //     Debug.Log("ive found the tiles, there are: "+allTilesInPlay.Length);
 
-    //     foreach (TileBase t in allTilesInPlay){
-    //             if (t!=null){
-    //                 Vector3Int position = grid.WorldToCell
-    //                 ChangeTileColor(tileLocation,dataFromTiles[t].tileColorNumber);
-    //                 Debug.Log("my tile colour number is: "+dataFromTiles[t].tileColorNumber);
-    //             }
-    //         }
-    //     }
 
         public void ChangeTileColor(Vector3Int position, int tileColorNumber){
             map.SetTile(position, gmScript.currentlevelData.levelTiles[tileColorNumber-1]);
         }
-
-        //get all tiles. 
-        //for each, get its number
-        //change to tile[number] for new level, known by Gm.
-            //TODO*
-
-        //tilemap.tiles
-        //if has a tileColourNumber, change the tile image to 
-        // gmScript.current.levelTiles[tileColorNumber];
-      //  piece.data.tile = gmScript.currentlevelData.levelTiles[blockColorInt];
 
     }
