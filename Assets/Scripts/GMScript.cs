@@ -8,11 +8,13 @@ public class GMScript : MonoBehaviour
     public GameObject mapManager;
     public MapManagerScript mmScript;
     public Board board;
-    public int currentLevel = 0;
+    public int currentLevel = 1;
     public LevelDetails currentlevelData;
-    public int lineCounter = 0;
+    public int levellineCounter = 0;
+    public int gameLineCounter = 0;
     public int score = 0;
     public TMP_Text scoreLabel;
+    public TMP_Text lineNumberText;
 
 
 
@@ -22,14 +24,14 @@ public class GMScript : MonoBehaviour
 
 
     public void Start(){
-        currentLevel = 0;
-        currentlevelData = allLevelData[currentLevel];
+        currentLevel = 1;
+        currentlevelData = allLevelData[currentLevel-1];
     }
 
     //ideally move this out and check in board? so its not an update only runs when needed.
   //  public void Update(){
-    //    if (lineCounter >= currentlevelData.goalLines){
-      //      lineCounter = 0;
+    //    if (levellineCounter >= currentlevelData.goalLines){
+      //      levellineCounter = 0;
           //  ChangeLevel();
         //}
     //}
@@ -39,7 +41,7 @@ public class GMScript : MonoBehaviour
         currentlevelData = allLevelData[currentLevel];
         mmScript = mapManager.GetComponent<MapManagerScript>();
         mmScript.ResetTileColours();
-        lineCounter = 0;
+        levellineCounter = 0;
         board.pieceSpeed = currentlevelData.levelStepDelay;
         //Piece[] allPieces = FindObjectsOfType<Piece>();
         //Debug.Log("i made an array of all the pieces, there are: "+allPieces.Length);
@@ -50,9 +52,11 @@ public class GMScript : MonoBehaviour
         //}
     }
 
+  // Updates visible scores, score and line counter.
   public void updateScore(int i){
-    score = score + i;
+    score = score + (i * currentLevel);
     scoreLabel.text = score.ToString();
+    lineNumberText.text = gameLineCounter.ToString();
   }
 
 }

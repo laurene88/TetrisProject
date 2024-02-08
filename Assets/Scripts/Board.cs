@@ -125,6 +125,7 @@ public class Board : MonoBehaviour
         //loop through every row in tile map, & check if all cols full.
         // if so, is full & we then clear & shift everything down.
         // iterate from bottom row to top, can use our bounds rect
+        int completedRowsThisRound = 0;
         RectInt bounds = this.Bounds;
         int row = bounds.yMin;
         while (row < bounds.yMax)
@@ -132,12 +133,38 @@ public class Board : MonoBehaviour
             //check if row full
             if (IsLineFull(row))
             {
+                completedRowsThisRound++;
                 LineClear(row); //do not iterate the row if we do a line clear.
             } else {
                 row++; //ONLY IF CLEAR. as need to retest, as tiles will fall to this row.
             }
         }
+
+        ScoreRound(completedRowsThisRound);
+        completedRowsThisRound = 0; //reset counter.
     }
+
+    void ScoreRound(int completedRows){
+        switch (completedRows){
+            case 4:
+                //TETRIS
+                gmScript.updateScore(800);
+                break;
+            case 3:
+                gmScript.updateScore(500);
+                break;
+            case 2:
+                gmScript.updateScore(300);
+                break;
+            case 1: 
+                //single row
+                gmScript.updateScore(100);
+                break;
+            default: 
+                break;
+        }
+    }
+
 
     public bool IsLineFull(int row){
         //iterates through cols to check if row full
@@ -164,11 +191,12 @@ public class Board : MonoBehaviour
             this.tilemap.SetTile(position, null); //delete tile.
         }
 
-        gmScript.lineCounter++;
-        gmScript.updateScore(100);
-        Debug.Log("completed line counter:" + gmScript.lineCounter);
-                
-        if (gmScript.lineCounter >= gmScript.currentlevelData.goalLines){
+        //Update line counters in GM.
+        gmScript.levellineCounter++;
+        gmScript.gameLineCounter++;
+
+        //has to be here as holds the next piece from dropping too fast (without first changing color)
+        if (gmScript.levellineCounter >= gmScript.currentlevelData.goalLines){
             midLevelChange = true;
             gmScript.ChangeLevel();
             midLevelChange = false;
