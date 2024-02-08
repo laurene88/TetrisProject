@@ -10,6 +10,7 @@ public class Board : MonoBehaviour
     public GameObject GM;
     public GMScript gmScript;
     public GameObject MM;
+    public float pieceSpeed;
 
     //define array of tetromino data to customise in editor
     public TetrominoData[] tetrominoes;
@@ -59,21 +60,26 @@ public class Board : MonoBehaviour
         int blockColorInt = Random.Range(0,3);
         data.tile = gmScript.currentlevelData.levelTiles[blockColorInt];
         // THIS IS WHERE SET TILE TYPE/COLOR
+        //looooord need step delay here too. 
+        pieceSpeed = gmScript.currentlevelData.levelStepDelay;
 
         //this instantiates new active piece.
-        this.activePiece.Initialise(this,this.spawnPosition, data, blockColorInt);
+        this.activePiece.Initialise(this,this.spawnPosition, data, blockColorInt, pieceSpeed);
         
         if (IsValidPosition(activePiece, spawnPosition)){
             Set(activePiece);
         } else{
-            GameOver(); //this & methods copied from tutorial git
+            GameOverLost(); //this & methods copied from tutorial git
         }
         }
     }
 
-    public void GameOver(){
-        tilemap.ClearAllTiles();
+    public void GameOverLost(){
+        tilemap.ClearAllTiles(); 
+        //TODO IF LOSE: add an animation of rows of tiles of correct colours going up to the top of hte board
     }
+   
+
 
     public void Set(Piece piece)
     {

@@ -13,6 +13,7 @@ public class GMScript : MonoBehaviour
     public int lineCounter = 0;
 
 
+
     [SerializeField]
     public LevelDetails[] allLevelData = new LevelDetails[10];
 
@@ -36,6 +37,7 @@ public class GMScript : MonoBehaviour
         mmScript = mapManager.GetComponent<MapManagerScript>();
         mmScript.ResetTileColours();
         lineCounter = 0;
+        board.pieceSpeed = currentlevelData.levelStepDelay;
         //Piece[] allPieces = FindObjectsOfType<Piece>();
         //Debug.Log("i made an array of all the pieces, there are: "+allPieces.Length);
         //PIECES ARE NOT REAL OBJECTS. THEY ARE GROUPS OF TILES ON THE BOARD.
@@ -45,5 +47,6 @@ public class GMScript : MonoBehaviour
         //}
     }
 
+    
 }
 

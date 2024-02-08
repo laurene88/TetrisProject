@@ -25,12 +25,13 @@ public class Piece : MonoBehaviour
     private float lockTime;
 
     //tile maps use Vector3Ints (not 2)        
-    public void Initialise(Board board, Vector3Int position, TetrominoData data, int blockColorInt)
+    public void Initialise(Board board, Vector3Int position, TetrominoData data, int blockColorInt, float pieceSpeed)
     {
         this.board = board;
         this.position = position;
         this.data = data;
         this.blockColorInt = blockColorInt;
+        this.stepDelay = pieceSpeed;
         
         this.stepTime = Time.time + this.stepDelay; //1sec later than current
         this.lockTime = 0f; //will increase, after reaches lock delay itll lock. 

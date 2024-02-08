@@ -10,7 +10,7 @@ public class LevelDetails : ScriptableObject
     public int goalLines;
     //Sets Piece - stepDelay
     // the smaller this number the faster they fall.
-    public float levelStepDelay = 1f;
+    public float levelStepDelay;
 
     public Tile[] levelTiles = new Tile[3];
 
