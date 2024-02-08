@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768237279a84f84d89c8aafb08d9523, type: 3}
+  m_Name: Tile2
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 8d29083224ea70f4dac6acd6ceb94180, type: 2}
+  - {fileID: 11400000, guid: 2c5652ca6d2194c4ea7aa61a32ae5978, type: 2}
+  - {fileID: 11400000, guid: f66066fa34febbf488385e65b50b695c, type: 2}
+  - {fileID: 11400000, guid: 96616388fa761e14e80fe90dba76f0f0, type: 2}
+  - {fileID: 11400000, guid: f716eb574ba41944dbd97db863993914, type: 2}
+  - {fileID: 11400000, guid: 0a545ae3d3bcaa64e91f2d55b56458d1, type: 2}
+  - {fileID: 11400000, guid: fa6e726a1112705488b9c255628e7667, type: 2}
+  - {fileID: 11400000, guid: 8fce91de56bdf3f49850f5db0cd2353b, type: 2}
+  - {fileID: 11400000, guid: 8212861c407c8be44898ed5cb0bd9b66, type: 2}
+  - {fileID: 11400000, guid: 6aba9216669897340b11e92d150041da, type: 2}
+  tileColorNumber: 2

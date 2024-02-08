@@ -15,6 +15,7 @@ public class Piece : MonoBehaviour
     //have an array of cells here as well
     public Vector3Int[] cells {get; private set;}
     public int rotationIndex {get; private set;}
+    public int blockColorInt;
 
 
     public float stepDelay = 1f; //slow default for level 1.
@@ -24,11 +25,13 @@ public class Piece : MonoBehaviour
     private float lockTime;
 
     //tile maps use Vector3Ints (not 2)        
-    public void Initialise(Board board, Vector3Int position, TetrominoData data)
+    public void Initialise(Board board, Vector3Int position, TetrominoData data, int blockColorInt)
     {
         this.board = board;
         this.position = position;
         this.data = data;
+        this.blockColorInt = blockColorInt;
+        
         this.stepTime = Time.time + this.stepDelay; //1sec later than current
         this.lockTime = 0f; //will increase, after reaches lock delay itll lock. 
         this.rotationIndex = 0; //make sure to set this eachtime so spawns as default.

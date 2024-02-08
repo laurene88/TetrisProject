@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GMScript : MonoBehaviour
 {
-
+    public GameObject mapManager;
+    public MapManagerScript mmScript;
+    public Board board;
     public int currentLevel = 0;
     public LevelDetails currentlevelData;
     public int score = 0;
@@ -30,7 +32,15 @@ public class GMScript : MonoBehaviour
     private void ChangeLevel(){
         currentLevel++;
         currentlevelData = allLevelData[currentLevel];
-
+        mmScript = mapManager.GetComponent<MapManagerScript>();
+        mmScript.ResetTileColours();
+        //Piece[] allPieces = FindObjectsOfType<Piece>();
+        //Debug.Log("i made an array of all the pieces, there are: "+allPieces.Length);
+        //PIECES ARE NOT REAL OBJECTS. THEY ARE GROUPS OF TILES ON THE BOARD.
+        //foreach (Piece piece in allPieces){
+          //  Debug.Log("piece colour number: "+piece.blockColorInt);
+            //board.ResetSetTileColor(piece);
+        //}
     }
 
 }

@@ -93,7 +93,7 @@ TextureImporter:
       213: 5087438582111362649
     second: tetrisblockbase_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -110,10 +110,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -152,6 +154,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -191,6 +195,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -844,9 +872,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      tetrisblockbase_17: 7832228125785996714
+      tetrisblockbase_16: 9172233605451315772
+      tetrisblockbase_2: -8719520278832259938
+      tetrisblockbase_5: 7733766139819604707
+      tetrisblockbase_25: 2750555977637580523
+      tetrisblockbase_24: -2460782867907431729
+      tetrisblockbase_29: 5087438582111362649
+      tetrisblockbase_14: -6739205051816733832
+      tetrisblockbase_21: -3328707177408065812
+      tetrisblockbase_4: 491269897053929840
+      tetrisblockbase_10: -6446083880963190963
+      tetrisblockbase_20: 7703869409637239795
+      tetrisblockbase_22: 3241046706444224324
+      tetrisblockbase_26: -1241445901046878476
+      tetrisblockbase_3: -2354966898274155395
+      tetrisblockbase_18: 2723658540148231222
+      tetrisblockbase_6: -5509526162929296289
+      tetrisblockbase_12: -6888845422887410834
+      tetrisblockbase_15: 6716988487992686693
+      tetrisblockbase_1: 6820292445483293098
+      tetrisblockbase_11: 8374994584086502091
+      tetrisblockbase_13: 9066706751340182627
+      tetrisblockbase_27: -6454661111791770838
+      tetrisblockbase_9: -9059813888042823427
+      tetrisblockbase_28: 8059040475127872535
+      tetrisblockbase_19: 6748075584588310605
+      tetrisblockbase_0: -8312941180209758649
+      tetrisblockbase_23: 5348876161631034022
+      tetrisblockbase_8: -946880166051828844
+      tetrisblockbase_7: -3441298037924321491
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

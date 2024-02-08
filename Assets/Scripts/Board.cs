@@ -8,6 +8,8 @@ public class Board : MonoBehaviour
 
     public GameObject GM;
     public GMScript gmScript;
+    public GameObject MM;
+    
     //define array of tetromino data to customise in editor
     public TetrominoData[] tetrominoes;
     //need to refrence our tile map
@@ -15,6 +17,7 @@ public class Board : MonoBehaviour
     public Piece activePiece {get; private set;}
     public Vector3Int spawnPosition;
     public Vector2Int boardSize = new Vector2Int(10,20);
+
 
     // use RectInt as it has a useful built in function we can use. 
     public RectInt Bounds // htis is a c# property. need position (bottom left) & size.
@@ -50,11 +53,11 @@ public class Board : MonoBehaviour
         int random = Random.Range(0,tetrominoes.Length);
         TetrominoData data = tetrominoes[random];
         // set tile in this dataset, from the level tile set the GM is holding.
-        int random2 = Random.Range(0,3);
-        data.tile = gmScript.currentlevelData.levelTiles[random2];
+        int blockColorInt = Random.Range(0,3);
+        data.tile = gmScript.currentlevelData.levelTiles[blockColorInt];
         // THIS IS WHERE SET TILE.
 
-        this.activePiece.Initialise(this,this.spawnPosition, data);
+        this.activePiece.Initialise(this,this.spawnPosition, data, blockColorInt);
         
         if (IsValidPosition(activePiece, spawnPosition)){
             Set(activePiece);
