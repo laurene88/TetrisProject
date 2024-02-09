@@ -37,6 +37,7 @@ public class GMScript : MonoBehaviour
     //}
     
     public void ChangeLevel(){
+      Debug.Log("im changing level!");
         currentLevel++;
         currentlevelData = allLevelData[currentLevel];
         mmScript = mapManager.GetComponent<MapManagerScript>();
@@ -51,6 +52,7 @@ public class GMScript : MonoBehaviour
             //board.ResetSetTileColor(piece);
         //}
     }
+  
 
   // Updates visible scores, score and line counter.
   public void updateScore(int i){

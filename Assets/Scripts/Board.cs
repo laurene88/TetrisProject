@@ -5,7 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class Board : MonoBehaviour
 {
-
     public bool midLevelChange;
     public GameObject GM;
     public GMScript gmScript;
@@ -19,6 +18,8 @@ public class Board : MonoBehaviour
     public Piece activePiece {get; private set;}
     public Vector3Int spawnPosition;
     public Vector2Int boardSize = new Vector2Int(10,20);
+
+    public bool gamePaused = false;
 
 
     // use RectInt as it has a useful built in function we can use. 
@@ -50,17 +51,15 @@ public class Board : MonoBehaviour
 
     public void SpawnPiece()
     {
-        if (!midLevelChange){
+        if (!midLevelChange && !gamePaused){
         //need random tetromino, get one of our structs & assoc data.
         // tile is not set, this is set after.
         int random = Random.Range(0,tetrominoes.Length);
         TetrominoData data = tetrominoes[random];
         // set tile in this dataset, from the level tile set the GM is holding.
-        // HAPPENS TOO LATE WHEN CHANGING LEVELS.
         int blockColorInt = Random.Range(0,3);
         data.tile = gmScript.currentlevelData.levelTiles[blockColorInt];
         // THIS IS WHERE SET TILE TYPE/COLOR
-        //looooord need step delay here too. 
         pieceSpeed = gmScript.currentlevelData.levelStepDelay;
 
         //this instantiates new active piece.
@@ -69,18 +68,31 @@ public class Board : MonoBehaviour
         if (IsValidPosition(activePiece, spawnPosition)){
             Set(activePiece);
         } else{
-            GameOverLost(); //this & methods copied from tutorial git
-        }
+            gamePaused = true;
+            StartCoroutine(GameOverLost()); //this & methods copied from tutorial git
+            }
         }
     }
 
-    public void GameOverLost(){
-        tilemap.ClearAllTiles(); 
-        //TODO IF LOSE: add an animation of rows of tiles of correct colours going up to the top of hte board
-        //?disable this script?
+    IEnumerator GameOverLost(){
+        RectInt bounds = this.Bounds;
+        Debug.Log("row min:"+bounds.yMin+"row max:"+bounds.yMax);
+        int colorInt = 1;
+        for (int row = bounds.yMin; row < bounds.yMax; row++){
+            Tile endingRowTile = gmScript.currentlevelData.levelTiles[(colorInt%3)];
+        for (int col = bounds.xMin ; col < bounds.xMax; col++){
+                Vector3Int position = new Vector3Int(col, row, 0);
+                //Debug.Log("im setting row"+row+"col: "+col+" Tile colour: "+ colorInt%3);
+                tilemap.SetTile(position, endingRowTile); //set tile of same colour per row.
+            }
+            colorInt++;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
+ 
+   // public void GameOverLost(){
+        //tilemap.ClearAllTiles(); 
    
-
 
     public void Set(Piece piece)
     {
@@ -90,6 +102,7 @@ public class Board : MonoBehaviour
             //but need to offset based on position of piece.
             this.tilemap.SetTile(tilePosition, piece.data.tile);
         }
+
     }
 
     //a copy of set but with putting null in instead.
@@ -102,6 +115,8 @@ public class Board : MonoBehaviour
             this.tilemap.SetTile(tilePosition, null);
         }
     }
+
+
 
     public bool IsValidPosition(Piece piece, Vector3Int checkposition)
     {
@@ -121,7 +136,9 @@ public class Board : MonoBehaviour
         return true;
     }
 
+
     public void ClearLines(){
+        if (!gamePaused){
         //loop through every row in tile map, & check if all cols full.
         // if so, is full & we then clear & shift everything down.
         // iterate from bottom row to top, can use our bounds rect
@@ -133,16 +150,18 @@ public class Board : MonoBehaviour
             //check if row full
             if (IsLineFull(row))
             {
-                completedRowsThisRound++;
+                completedRowsThisRound++; //LEVEL IS LEVEL BEFORE THE LINE CLEAR. TODO ensure this is correct order.
+                                            //ITS NOT. ?recursive to count before deletes?
                 LineClear(row); //do not iterate the row if we do a line clear.
             } else {
                 row++; //ONLY IF CLEAR. as need to retest, as tiles will fall to this row.
             }
         }
-
         ScoreRound(completedRowsThisRound);
         completedRowsThisRound = 0; //reset counter.
+        }
     }
+
 
     void ScoreRound(int completedRows){
         switch (completedRows){
@@ -181,14 +200,38 @@ public class Board : MonoBehaviour
         return true;
     }
 
-    public void LineClear(int row){
 
+    //  TODO THIS ISNT WORKING THE WAY I WANT IT TO.
+    // WHY IS IT NOT WAITING.
+   public void LineClear(int row){
         RectInt bounds = this.Bounds;
+            Debug.Log("doin a line clear");
+        //split this into two functions & then IEnumerator for animation/deletion?
+        // HOW WILL I GET THESE TO RUN AT THE SAME TIME.
+        //going from middle to beginning.
 
-        for (int col = bounds.xMin ; col < bounds.xMax; col++)
+        // for (int col = bounds.xMin ; col < bounds.xMax; col++)
+        // {
+        //     Debug.Log("forloop in line clear");
+        //     Vector3Int position = new Vector3Int(col, row, 0);
+        //     this.tilemap.SetTile(position, null); //delete tile.
+        //     yield return new WaitForSeconds(0.1f);
+
+        // }
+
+        for (int col = -1 ; col >= bounds.xMin; col--)
         {
             Vector3Int position = new Vector3Int(col, row, 0);
             this.tilemap.SetTile(position, null); //delete tile.
+           // yield return new WaitForSeconds(0.1f);
+        }
+
+        //going from middle to end
+        for (int col = 0 ; col < bounds.xMax; col++)
+        {
+            Vector3Int position = new Vector3Int(col, row, 0);
+            this.tilemap.SetTile(position, null); //delete tile.
+           // yield return new WaitForSeconds(0.1f);
         }
 
         //Update line counters in GM.
@@ -202,19 +245,28 @@ public class Board : MonoBehaviour
             midLevelChange = false;
         }
 
-
+        //allows falling
+        // INCORRECT CODE. THE TILES DROP ONTO THIS ROW, REGARDLESS OF THE TILES DISAPPEARING FIRST!
+        //TODO!!!!
+        // should this be separate function called after the line is cleared?
+        //does work in correct order as is.
+        //or add a check for hasTile? 
+        
         while (row < bounds.yMax)
         {
+            //Debug.Log("falling tile while loop for row");
             for (int col = bounds.xMin ; col < bounds.xMax; col++){
+
                 //get position of tile, but get the one above it.
                 Vector3Int position = new Vector3Int(col, row+1, 0); //get position of the tile
-                TileBase above = this.tilemap.GetTile(position);
+                //if (!tilemap.HasTile(position)) // if this tile is null...
 
+                TileBase above = this.tilemap.GetTile(position);
                 position = new Vector3Int(col, row,0); //back to our current row.
                 this.tilemap.SetTile(position, above); //set spot to tile which is above.
                 }   
             row++;
         }
     }
+   }
 
-}
