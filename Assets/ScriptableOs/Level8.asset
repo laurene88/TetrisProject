@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level8
   m_EditorClassIdentifier: 
   levelNumber: 8
-  goalLines: 2
+  goalLines: 1
   levelStepDelay: 0.3
   levelTiles:
   - {fileID: 11400000, guid: 5163af030983f374d9f7c030e6750b8e, type: 2}

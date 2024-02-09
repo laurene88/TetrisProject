@@ -94,8 +94,9 @@ public class Piece : MonoBehaviour
     private void Lock(){
         this.board.Set(this);
         this.board.ClearLines(); //when a piece locks, check for lines. in between set & spawn
-        this.board.SpawnPiece();
-        
+        if (!board.gamePaused){ //*** to try and stop weird new piece spawn at end game
+            this.board.SpawnPiece();
+            }
     }
 
     private void HardDrop(){

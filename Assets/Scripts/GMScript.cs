@@ -8,15 +8,15 @@ public class GMScript : MonoBehaviour
     public GameObject mapManager;
     public MapManagerScript mmScript;
     public Board board;
-    public int currentLevel = 1;
+    public int currentLevel;
     public LevelDetails currentlevelData;
     public int levellineCounter = 0;
     public int gameLineCounter = 0;
     public int score = 0;
     public TMP_Text scoreLabel;
     public TMP_Text lineNumberText;
-
-
+    public TMP_Text levelNumberText;
+    public GameObject EndGamePanel;
 
 
     [SerializeField]
@@ -24,8 +24,7 @@ public class GMScript : MonoBehaviour
 
 
     public void Start(){
-        currentLevel = 1;
-        currentlevelData = allLevelData[currentLevel-1];
+        StartGame();
     }
 
     //ideally move this out and check in board? so its not an update only runs when needed.
@@ -35,11 +34,25 @@ public class GMScript : MonoBehaviour
           //  ChangeLevel();
         //}
     //}
-    
+    public void StartGame(){
+        currentLevel = 1;
+        currentlevelData = allLevelData[currentLevel-1];
+        EndGamePanel.SetActive(false);
+        score = 0;
+        levellineCounter = 0;
+        gameLineCounter = 0;
+        board.tilemap.ClearAllTiles();
+    }
+
+
     public void ChangeLevel(){
       Debug.Log("im changing level!");
-        currentLevel++;
-        currentlevelData = allLevelData[currentLevel];
+        if (currentLevel == 10){
+            MaxLevelReached();
+            return;
+          }
+        currentLevel++; 
+        currentlevelData = allLevelData[currentLevel-1];
         mmScript = mapManager.GetComponent<MapManagerScript>();
         mmScript.ResetTileColours();
         levellineCounter = 0;
@@ -59,7 +72,19 @@ public class GMScript : MonoBehaviour
     score = score + (i * currentLevel);
     scoreLabel.text = score.ToString();
     lineNumberText.text = gameLineCounter.ToString();
+    levelNumberText.text = (currentLevel).ToString();
   }
 
+  public void MaxLevelReached(){
+    board.gamePaused = true;
+    EndGamePanel.SetActive(true);
+  }
+
+  public void PlayAgainButton(){
+    Debug.Log("button clikc");
+    EndGamePanel.SetActive(false);
+    StartGame();
+    board.gamePaused = false;
+  }
 }
 

@@ -64,17 +64,19 @@ public class Board : MonoBehaviour
 
         //this instantiates new active piece.
         this.activePiece.Initialise(this,this.spawnPosition, data, blockColorInt, pieceSpeed);
-        
+
         if (IsValidPosition(activePiece, spawnPosition)){
             Set(activePiece);
         } else{
             gamePaused = true;
+            Destroy(activePiece);
             StartCoroutine(GameOverLost()); //this & methods copied from tutorial git
             }
         }
     }
 
     IEnumerator GameOverLost(){
+        tilemap.ClearAllTiles();
         RectInt bounds = this.Bounds;
         Debug.Log("row min:"+bounds.yMin+"row max:"+bounds.yMax);
         int colorInt = 1;
@@ -115,7 +117,6 @@ public class Board : MonoBehaviour
             this.tilemap.SetTile(tilePosition, null);
         }
     }
-
 
 
     public bool IsValidPosition(Piece piece, Vector3Int checkposition)
