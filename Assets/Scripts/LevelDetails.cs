@@ -12,7 +12,9 @@ public class LevelDetails : ScriptableObject
     // the smaller this number the faster they fall.
     public float levelStepDelay;
 
-    public Tile[] levelTiles = new Tile[3];
+    public Tile[] levelTiles = new Tile[4];
+
+    //change to 4 tiles, always use Tile[3] as the final level ender when lose.
 
     //tile sets to use. 
     //end of level - line count?

@@ -79,16 +79,27 @@ public class Board : MonoBehaviour
         tilemap.ClearAllTiles();
         RectInt bounds = this.Bounds;
         Debug.Log("row min:"+bounds.yMin+"row max:"+bounds.yMax);
-        int colorInt = 1;
-        for (int row = bounds.yMin; row < bounds.yMax; row++){
-            Tile endingRowTile = gmScript.currentlevelData.levelTiles[(colorInt%3)];
-        for (int col = bounds.xMin ; col < bounds.xMax; col++){
-                Vector3Int position = new Vector3Int(col, row, 0);
-                //Debug.Log("im setting row"+row+"col: "+col+" Tile colour: "+ colorInt%3);
-                tilemap.SetTile(position, endingRowTile); //set tile of same colour per row.
-            }
-            colorInt++;
+
+        // This code adds special 4th tile, going DOWN the grid. (Correct)
+         for (int row = bounds.yMax - 1; row >= bounds.yMin; row--){
+             Tile endingRowTile = gmScript.currentlevelData.levelTiles[3];
+         for (int col = bounds.xMin ; col < bounds.xMax; col++){
+                 Vector3Int position = new Vector3Int(col, row, 0);
+                 //Debug.Log("im setting row"+row+"col: "+col+" Tile colour: "+ colorInt%3);
+                 tilemap.SetTile(position, endingRowTile); //set tile of same colour per row.
+             }
             yield return new WaitForSeconds(0.05f);
+         
+        // This code adds 1 of each 3 tile going up the grid. (Incorrect)
+        // int colorInt = 1;
+        // for (int row = bounds.yMin; row < bounds.yMax; row++){
+        //     Tile endingRowTile = gmScript.currentlevelData.levelTiles[(colorInt%3)];
+        // for (int col = bounds.xMin ; col < bounds.xMax; col++){
+        //         Vector3Int position = new Vector3Int(col, row, 0);
+        //         //Debug.Log("im setting row"+row+"col: "+col+" Tile colour: "+ colorInt%3);
+        //         tilemap.SetTile(position, endingRowTile); //set tile of same colour per row.
+        //     }
+        //     colorInt++;
         }
     }
  
