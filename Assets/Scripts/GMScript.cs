@@ -17,6 +17,7 @@ public class GMScript : MonoBehaviour
     public TMP_Text lineNumberText;
     public TMP_Text levelNumberText;
     public GameObject EndGamePanel;
+    public TMP_Text panelText;
 
 
     [SerializeField]
@@ -78,6 +79,14 @@ public class GMScript : MonoBehaviour
   public void MaxLevelReached(){
     board.gamePaused = true;
     EndGamePanel.SetActive(true);
+    panelText.text = "YOU WIN!";
+  }
+
+  public void GameLost(){
+    board.gamePaused = true;
+    EndGamePanel.SetActive(true);
+    panelText.text = "YOU LOSE";
+
   }
 
   public void PlayAgainButton(){

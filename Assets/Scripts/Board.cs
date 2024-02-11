@@ -89,6 +89,8 @@ public class Board : MonoBehaviour
                  tilemap.SetTile(position, endingRowTile); //set tile of same colour per row.
              }
             yield return new WaitForSeconds(0.05f);
+         }
+         gmScript.GameLost();
          
         // This code adds 1 of each 3 tile going up the grid. (Incorrect)
         // int colorInt = 1;
@@ -100,12 +102,8 @@ public class Board : MonoBehaviour
         //         tilemap.SetTile(position, endingRowTile); //set tile of same colour per row.
         //     }
         //     colorInt++;
-        }
     }
- 
-   // public void GameOverLost(){
-        //tilemap.ClearAllTiles(); 
-   
+    
 
     public void Set(Piece piece)
     {
